@@ -39,26 +39,43 @@ h1, h2, h3 {
 
 #timer div {
   background: rgba(255,255,255,0.1);
-  padding: 10px;
+  padding: 12px;
   border-radius: 10px;
   flex: 1 1 100px;
   min-width: 80px;
   text-align: center;
+  transition: all 0.3s ease;
 }
 
-/* Mobile responsiveness */
+/* ✅ Mobile Responsive Layout */
 @media (max-width: 500px) {
   #timer {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
+    gap: 8px;
+    font-size: 1em; /* smaller font */
+    margin-top: 10px;
   }
 
   #timer div {
-    font-size: 1.2em;
-    padding: 8px;
+    padding: 8px 5px;
+    min-width: auto;
+    font-size: 0.9em;
+  }
+
+  #timer span {
+    font-size: 1.4em;
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  #timer p {
+    margin: 0;
+    font-size: 0.8em;
+    opacity: 0.8;
   }
 }
+
 
 .photo {
   width: 100%;
@@ -100,4 +117,5 @@ a {
 a:hover {
   text-decoration: underline;
 }
+
 
