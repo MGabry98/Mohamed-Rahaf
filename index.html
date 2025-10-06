@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Our Wedding Invitation</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="overlay">
+    <div class="container">
+      <h1>We're Getting Married!</h1>
+      <h2>Mohamed & Rahaf</h2>
+      <div id="timer">
+        <div><span id="days">00</span><p>Days</p></div>
+        <div><span id="hours">00</span><p>Hours</p></div>
+        <div><span id="minutes">00</span><p>Minutes</p></div>
+        <div><span id="seconds">00</span><p>Seconds</p></div>
+      </div>
+
+      <h3>Venue</h3>
+      <p>Mövenpick Cairo Media City</p>
+      <a href="https://www.google.com/maps?gs_lcrp=EgZjaHJvbWUqCggAEAAYsQMYgAQyCggAEAAYsQMYgAQyGQgBEC4YrwEYxwEYsQMYgAQYmAUYmQUYngUyGQgCEC4YrwEYxwEYsQMYgAQYmAUYmQUYngUyFggDEC4YrwEYxwEYgAQYmAUYmgUYngUyBwgEEAAYgAQyBwgFEAAYgAQyFggGEC4YrwEYxwEYgAQYmAUYmQUYngUyFggHEC4YrwEYxwEYgAQYmAUYmQUYngUyFggIEC4YrwEYxwEYgAQYmAUYmQUYngUyDQgJEC4YrwEYxwEYgATSAQgzODI0ajBqN6gCALACAA&um=1&ie=UTF-8&fb=1&gl=eg&sa=X&geocode=Kdk-JJ7iUFgUMZRhXDtUUNHb&daddr=El+Wahat+Rd,+First+6th+of+October,+6th+of+October+City+(3),+Giza+Governorate+3280240" target="_blank">View on Map</a>
+
+      <h3>Photo</h3>
+      <img src="images/couple.jpg" alt="Couple Photo" class="photo"/>
+
+      <h3>RSVP</h3>
+      <form name="rsvp" method="POST" data-netlify="true">
+        <input type="text" name="name" placeholder="Your Name" required />
+        <input type="tel" name="mobile" placeholder="Mobile Number" required />
+        <textarea name="note" placeholder="Leave us a message..."></textarea>
+        <button type="submit">Send RSVP</button>
+      </form>
+
+      <h3>Your Notes</h3>
+      <!-- This will display the messages if using Netlify Forms dashboard -->
+      <p>Thank you for your message! We'll read them all 💌</p>
+    </div>
+  </div>
+
+  <script>
+    // Countdown Timer
+    const weddingDate = new Date("2026-05-01T17:00:00").getTime(); // set your date/time
+    const x = setInterval(() => {
+      const now = new Date().getTime();
+      const distance = weddingDate - now;
+
+      document.getElementById("days").innerText = Math.floor(distance / (1000 * 60 * 60 * 24));
+      document.getElementById("hours").innerText = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      document.getElementById("minutes").innerText = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      document.getElementById("seconds").innerText = Math.floor((distance % (1000 * 60)) / 1000);
+
+      if (distance < 0) {
+        clearInterval(x);
+        document.getElementById("timer").innerHTML = "<p>We're Married! 🎉</p>";
+      }
+    }, 1000);
+  </script>
+</body>
+</html>
