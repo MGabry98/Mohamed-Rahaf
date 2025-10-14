@@ -17,10 +17,8 @@
   window.addEventListener("load", () => {
     const music = document.getElementById("bg-music");
     // Try to unmute after user interaction
-    document.body.addEventListener("click", () => {
-      music.muted = false;
+	  music.muted = false;
       music.play();
-    }, { once: true });
   });
 </script>
 
@@ -139,6 +137,7 @@
 
    </body>
 </html>
+
 
 
 
