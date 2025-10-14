@@ -35,82 +35,7 @@
                </div>
             </div>
          </section>
-         <section class="lg:h-[476px] h-[475px] w-screen overflow-hidden py-20 counter-section flex items-center justify-center"><!doctype html>
-<html lang="en">
-<head>
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <style>
-    body {
-      margin: 0;
-      height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: #ffffff;
-      color: #000000;
-      font-family: 'Inter', sans-serif;
-    }
-    .countdown {
-      display: flex;
-      gap: 20px;
-    }
-    .tile {
-      text-align: center;
-      background: #f3f3f3;
-      border-radius: 12px;
-      padding: 20px 24px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    }
-    .num {
-      font-size: 40px;
-      font-weight: bold;
-      color: #000;
-    }
-    .label {
-      font-size: 12px;
-      opacity: 0.7;
-      text-transform: uppercase;
-      margin-top: 4px;
-      color: #333;
-    }
-  </style>
-</head>
-<body>
-  <div class="countdown">
-    <div class="tile"><div class="num" id="days">0</div><div class="label">Days</div></div>
-    <div class="tile"><div class="num" id="hours">0</div><div class="label">Hours</div></div>
-    <div class="tile"><div class="num" id="minutes">0</div><div class="label">Minutes</div></div>
-    <div class="tile"><div class="num" id="seconds">0</div><div class="label">Seconds</div></div>
-  </div>
-
-  <script>
-    const eventDate = new Date('2026-05-01T18:00:00').getTime(); // Set your target date here
-
-    function updateCountdown() {
-      const now = new Date().getTime();
-      const diff = eventDate - now;
-
-      if (diff <= 0) {
-        document.body.innerHTML = '<h1>Event Started!</h1>';
-        return;
-      }
-
-      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-
-      document.getElementById('days').textContent = days;
-      document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
-      document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
-      document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
-    }
-
-    setInterval(updateCountdown, 1000);
-    updateCountdown();
-  </script>
-</body>
-</html></section>
+         
          <section class=" w-screen flex items-center justify-center lg:py-20 pb-20">
             <div class="container grid grid-cols-2 gap-10 p-10 lg:p-0">
                <div class="col-span-2 lg:col-span-1 flex items-center">
@@ -139,4 +64,3 @@
 
    </body>
 </html>
-
