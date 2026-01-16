@@ -21,7 +21,8 @@
 	</style> -->
    <body class="marck_script_49e6ed93-module___xDlMG__variable geist_mono_61d9be35-module__Zlhb6G__variable antialiased bg-neutral-50">
       <div id="landing-overlay">
-        <img src="./landing-image.jpg" alt="View Details" id="landing-image" data-gif="./Env.gif">
+        <img src="./landing-image.jpg" alt="View Details" id="landing-image" >
+		  <!-- data-gif="./Env.gif" -->
     </div>
 	   <style>
 		   /* Landing overlay */
@@ -222,25 +223,20 @@
       </main>
 	   <script>
         const overlay = document.getElementById("landing-overlay");
-		const image = document.getElementById("landing-image");
+		// const image = document.getElementById("landing-image");
 
-                overlay.addEventListener("click", () => {
-            // Start GIF
-            image.src = image.dataset.gif;
+        overlay.addEventListener("click", () => {
+            overlay.classList.add("fade-out");
 
-            // Wait 1 second before starting fade
             setTimeout(() => {
-                overlay.classList.add("fade-out");
-
-                // Remove overlay after fade finishes
-                setTimeout(() => {
-                    overlay.remove();
-                    document.body.style.overflow = "auto";
-                }, 2000); // must match CSS fade duration
-            }, 1000); // 1-second delay after GIF starts
+                overlay.remove();
+                document.body.style.overflow = "auto"; // re-enable scrolling
+            }, 2000); // must match CSS transition time
+        });
         });
     </script>
 </body></html>
+
 
 
 
